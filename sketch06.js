@@ -57,7 +57,7 @@ const sketch = ({ context, width, height }) => {
       context.font = `${cell * 2}px ${fontFamily}`;
       if (Math.random() < 0.1) context.font = `${cell * 6}px ${fontFamily}`;
 
-      context.fillStyle = 'white';
+      context.fillStyle = 'pink';
 
       context.save();
       context.translate(x, y);
@@ -80,7 +80,7 @@ const getGlyph = (v) => {
   if (v < 150) return '—';
   if (v < 200) return '=';
 
-  const glyphs = 'Шевченко'.split('');
+  const glyphs = '.+-*   '.split('');
 
   return random.pick(glyphs);
 };
@@ -103,7 +103,7 @@ const loadMeSomeImage = (url) => {
 };
 
 const start = async () => {
-  const url = 'images/symbolskrip.png';
+  const url = 'images/3.jpeg';
   image = await loadMeSomeImage(url);
   manager = await canvasSketch(sketch, settings);
 };
